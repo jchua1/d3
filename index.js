@@ -29,3 +29,6 @@ b_bar.style("width", function(d) {
     return d * 10 + "px"; });
 b_bar.text(function(d) { return d; });
 
+var myFirstTransition = function(m) {
+        dyn.selectAll("div").data(info).transition().style("width", function(d) { return d * m + "px"; }); 
+};
