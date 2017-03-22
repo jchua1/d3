@@ -30,5 +30,29 @@ b_bar.style("width", function(d) {
 b_bar.text(function(d) { return d; });
 
 var myFirstTransition = function(m) {
-        dyn.selectAll("div").data(info).transition().style("width", function(d) { return d * m + "px"; }); 
+    a.selectAll("div")
+	.data(adata)
+	.transition()
+	.style("width", function(d) { 
+	    return d * m + "px"; });
+    b.selectAll("div")
+	.data(bdata)
+	.transition()
+	.style("width", function(d) {
+	    return d * m + "px"; });
+};
+
+var mySecondTransition = function(m, dur) {
+    a.selectAll("div")
+	.data(adata)
+	.transition()
+	.duration(dur)
+	.style("width", function(d) { 
+	    return d * m + "px"; });
+    b.selectAll("div")
+	.data(bdata)
+	.transition()
+	.duration(dur)
+	.style("width", function(d) {
+	    return d * m + "px"; });
 };
